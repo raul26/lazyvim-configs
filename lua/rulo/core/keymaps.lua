@@ -18,11 +18,11 @@ keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git bra
 keymap.set("n", "<leader>gitm", ":G mergetool<cr>")
 -- conflict handing
 keymap.set("n", "<leader>mc", ":Gdiffsplit!<cr>")
-keymap.set("n", "<leader>mgl", ":diffget //2<cr>")
-keymap.set("n", "<leader>mgr", ":diffget //3<cr>")
+keymap.set("n", "<leader>ml", ":diffget //2<cr>")
+keymap.set("n", "<leader>mr", ":diffget //3<cr>")
 
 -- Vgit commands
 keymap.set("n", "<leader>gitd", ":VGit buffer_history_preview<cr>")
-keymap.set("n", "<leader>gits", ":VGit project_diff_preview<cr>")
-keymap.set("n", "<leader>gs", ":VGit buffer_hunk_preview<cr>")
+keymap.set("n", "<leader>gits", "<cmd>Telescope git_status<cr>")
+keymap.set("n", "<leader>gs", "<cmd>Telescope git_stash<cr>")
 keymap.set("n", "<leader>gh", ":VGit buffer_history_preview<cr>")
