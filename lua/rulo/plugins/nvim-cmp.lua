@@ -15,6 +15,7 @@ return {
 		local luasnip = require("luasnip")
 
 		local lspkind = require("lspkind")
+		require("crates.src.cmp").setup()
 
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load({
@@ -53,6 +54,7 @@ return {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" }, -- snippets
 				{ name = "buffer" }, -- text within current buffer
+				{ name = "crates" }, -- file system paths
 				{ name = "path" }, -- file system paths
 			}),
 			-- configure lspkind for vs-code like pictograms in completion menu

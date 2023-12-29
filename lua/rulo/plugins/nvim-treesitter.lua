@@ -29,6 +29,8 @@ return {
 					"javascript",
 					"typescript",
 					"tsx",
+					"rust",
+					"toml",
 					"yaml",
 					"html",
 					"css",
