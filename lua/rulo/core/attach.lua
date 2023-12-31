@@ -26,7 +26,6 @@ function M.on_attach(client, bufnr)
 
 	-- opts.desc = "Restart LSP"
 	-- keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
-	print(client.name)
 	if client.name == "rust-analyzer" then
 		keymap.set("n", "<leader>ca", ":RustLsp codeAction<CR>", { buffer = bufnr })
 		keymap.set("n", "<leader>dr", ":RustLsp debuggables<CR>", { buffer = bufnr })
@@ -37,7 +36,6 @@ function M.on_attach(client, bufnr)
 		keymap.set("n", "<leader>pm", ":RustLsp parentModule<CR>", { buffer = bufnr })
 		keymap.set("n", "K", ":RustLsp hover actions<CR>", { buffer = bufnr })
 	else
-		print("it is not")
 		keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
 		keymap.set("n", "<space>ca", "<cmd>Lspsaga code_action<CR>") --imports
 	end
