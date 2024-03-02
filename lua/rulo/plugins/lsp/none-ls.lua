@@ -4,6 +4,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" }, -- to enable uncomment this
 	dependencies = {
 		"jay-babu/mason-null-ls.nvim",
+		"nvimtools/none-ls-extras.nvim",
 		"davidmh/cspell.nvim",
 	},
 	config = function()
@@ -36,15 +37,21 @@ return {
 			-- setup formatters & linters
 			sources = {
 				--  to disable file types use
-				formatting.prettier,
-				formatting.stylua, -- lua formatter
 				cspell.diagnostics,
 				cspell.code_actions,
-				diagnostics.eslint.with({ -- js/ts linter
+				formatting.prettier,
+				formatting.stylua, -- lua formatter
+				-- require("none-ls.code_actions.eslint"),
+				require("none-ls.diagnostics.eslint").with({
 					condition = function(utils)
 						return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
 					end,
 				}),
+				-- diagnostics.eslint.with({ -- js/ts linter
+				-- 	condition = function(utils)
+				-- 		return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
+				-- 	end,
+				-- }),
 			},
 			-- configure format on save
 			on_attach = function(current_client, bufnr)

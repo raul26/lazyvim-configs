@@ -32,11 +32,6 @@ return {
 			on_attach = on_attach,
 		})
 
-		-- lspconfig["glint"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
-
 		-- configure typescript server with plugin
 		lspconfig["tsserver"].setup({
 			capabilities = capabilities,
@@ -61,18 +56,6 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
-
-		-- lspconfig["rust_analyzer"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- 	cmd = {
-		-- 		"rustup",
-		-- 		"run",
-		-- 		"stable",
-		-- 		"rust-analyzer",
-		-- 	},
-		-- 	-- settings = {}
-		-- })
 
 		-- configure graphql language server
 		lspconfig["graphql"].setup({

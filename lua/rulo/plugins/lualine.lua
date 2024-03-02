@@ -52,7 +52,7 @@ return {
 		-- configure lualine with modified theme
 		lualine.setup({
 			options = {
-				theme = my_lualine_theme,
+				theme = "nightfly",
 			},
 			sections = {
 				lualine_b = { "branch", "diff", "diagnostics" },

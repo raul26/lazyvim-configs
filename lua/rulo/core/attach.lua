@@ -6,9 +6,9 @@ function M.on_attach(client, bufnr)
 	local keymap = vim.keymap -- for conciseness
 
 	-- set keybinds
-	keymap.set("n", "gD", "<Cmd>luavim.lsp.buf.declaration()<CR>", opts) -- got to declaration
-	keymap.set("n", "gf", "<cmd>Lspsaga finder<CR>", opts) -- show definition, references
-	keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opts) -- see definition and make edits in window
+	-- keymap.set("n", "gD", "<Cmd>luavim.lsp.buf.declaration()<CR>", opts) -- got to declaration
+	keymap.set("n", "gf", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+	-- keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<CR>", opts) -- see definition and make edits in window
 	keymap.set("n", "pd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
 	keymap.set("n", "<leader>ot", "<cmd>Lspsaga outlinoutline<CR>", opts) -- see definition and make edits in window
 	keymap.set("n", "td", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
@@ -54,8 +54,6 @@ function M.on_attach(client, bufnr)
 		client.server_capabilities.document_formatting = false
 	end
 	-- set keybinds
-	-- opts.desc = "Show LSP references"
-	-- keymap.set("n", "pd", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
 	-- opts.desc = "Go to declaration"
 	keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
@@ -65,6 +63,7 @@ function M.on_attach(client, bufnr)
 
 	-- opts.desc = "Show LSP implementations"
 	keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
+	keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
 
 	-- opts.desc = "Show LSP type definitions"
 	-- keymap.set("n", "gf", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
@@ -73,7 +72,7 @@ function M.on_attach(client, bufnr)
 	keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 
 	-- opts.desc = "Smart rename"
-	keymap.set("n", "<leader>rn", "Lspsaga rename<CR>", opts) -- smart rename
+	keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
 
 	-- opts.desc = "Show buffer diagnostics"
 	keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
