@@ -32,6 +32,11 @@ return {
 			on_attach = on_attach,
 		})
 
+		-- lspconfig["glint"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
+
 		-- configure typescript server with plugin
 		lspconfig["tsserver"].setup({
 			capabilities = capabilities,
@@ -80,7 +85,16 @@ return {
 		lspconfig["emmet_ls"].setup({
 			-- capabilities = capabilities,
 			on_attach = on_attach,
-			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+			filetypes = {
+				"html",
+				"typescriptreact",
+				"javascriptreact",
+				"css",
+				"sass",
+				"scss",
+				"less",
+				"svelte",
+			},
 		})
 
 		local util = require("lspconfig.util")

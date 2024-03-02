@@ -1,14 +1,16 @@
 return {
 	"nvimtools/none-ls.nvim", -- configure formatters & linters
 	lazy = true,
-	-- event = { "BufReadPre", "BufNewFile" }, -- to enable uncomment this
+	event = { "BufReadPre", "BufNewFile" }, -- to enable uncomment this
 	dependencies = {
 		"jay-babu/mason-null-ls.nvim",
+		"davidmh/cspell.nvim",
 	},
 	config = function()
 		local mason_null_ls = require("mason-null-ls")
 
 		local null_ls = require("null-ls")
+		local cspell = require("cspell")
 
 		local null_ls_utils = require("null-ls.utils")
 
@@ -36,6 +38,8 @@ return {
 				--  to disable file types use
 				formatting.prettier,
 				formatting.stylua, -- lua formatter
+				cspell.diagnostics,
+				cspell.code_actions,
 				diagnostics.eslint.with({ -- js/ts linter
 					condition = function(utils)
 						return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs", ".eslintrc.json" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
