@@ -14,6 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{ import = "rulo.plugins" },
 	{ import = "rulo.plugins.lsp" },
+	-- { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+	-- { import = "lazyvim.plugins.extras.test.core" },
 }, {
 	install = {
 		colorscheme = { "light" },
