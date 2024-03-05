@@ -25,6 +25,7 @@ return {
 		})
 
 		luasnip.filetype_extend("typescript", { "angular" })
+		luasnip.filetype_extend("angular", { "html" })
 
 		cmp.setup({
 			completion = {

@@ -89,6 +89,13 @@ return {
 		lspconfig["angularls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			filetypes = {
+				"html",
+				"typescriptreact",
+				"javascriptreact",
+				"typescript",
+			},
+
 			root_dir = util.root_pattern(".angular.json", "angular.json"),
 		})
 
