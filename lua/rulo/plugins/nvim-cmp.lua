@@ -17,15 +17,15 @@ return {
 		local lspkind = require("lspkind")
 		require("crates.src.cmp").setup()
 
+		luasnip.filetype_extend("typescript", { "angular" })
+		luasnip.filetype_extend("html", { "angular" })
+
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load({
 			-- paths = {
 			-- 	"~/.config/nvim/lua/rulo/plugins/snippets/angular",
 			-- },
 		})
-
-		luasnip.filetype_extend("typescript", { "angular" })
-		luasnip.filetype_extend("angular", { "html" })
 
 		cmp.setup({
 			completion = {
