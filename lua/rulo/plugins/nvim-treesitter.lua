@@ -10,16 +10,13 @@ return {
 		config = function()
 			-- import nvim-treesitter plugin
 			local treesitter = require("nvim-treesitter.configs")
-			require("ts_context_commentstring").setup({})
 
 			-- configure treesitter
 			treesitter.setup({ -- enable syntax highlighting
 				highlight = {
 					enable = true,
 				},
-				-- enable indentation
 				indent = { enable = true },
-				-- enable autotagging (w/ nvim-ts-autotag plugin)
 				autotag = {
 					enable = true,
 				},
@@ -53,6 +50,7 @@ return {
 						node_decremental = "<bs>",
 					},
 				},
+				require("ts_context_commentstring").setup({}),
 				-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
 				-- context_commentstring = {
 				--   enable = true,

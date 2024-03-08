@@ -20,12 +20,7 @@ return {
 		luasnip.filetype_extend("typescript", { "angular" })
 		luasnip.filetype_extend("html", { "angular" })
 
-		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
-		require("luasnip.loaders.from_vscode").lazy_load({
-			-- paths = {
-			-- 	"~/.config/nvim/lua/rulo/plugins/snippets/angular",
-			-- },
-		})
+		require("luasnip.loaders.from_vscode").lazy_load({})
 
 		cmp.setup({
 			completion = {

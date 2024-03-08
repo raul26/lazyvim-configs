@@ -62,14 +62,11 @@ return {
 				-- map("n", "<leader>hu", gs.undo_stage_hunk)
 				-- map("n", "<leader>hR", gs.reset_buffer)
 				map("n", "<leader>gs", gs.preview_hunk)
-				-- map("n", "<leader>hb", function()
-				-- 	gs.blame_line({ full = true })
-				-- end)
+				map("n", "<leader>gbl", function()
+					gs.blame_line({ full = true })
+				end)
 				-- map("n", "<leader>tb", gs.toggle_current_line_blame)
 				map("n", "<leader>gd", gs.diffthis)
-				map("n", "<leader>gD", function()
-					gs.diffthis("~")
-				end)
 				-- map("n", "<leader>td", gs.toggle_deleted)
 				--
 				-- -- Text object
