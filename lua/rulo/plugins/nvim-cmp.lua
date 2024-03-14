@@ -13,6 +13,7 @@ return {
 		local cmp = require("cmp")
 
 		local luasnip = require("luasnip")
+		local util = require("lspconfig.util")
 
 		local lspkind = require("lspkind")
 		require("crates.src.cmp").setup()

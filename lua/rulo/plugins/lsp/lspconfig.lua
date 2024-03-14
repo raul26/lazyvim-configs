@@ -26,6 +26,8 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
+		local util = require("lspconfig.util")
+
 		-- configure html server
 		lspconfig["html"].setup({
 			capabilities = capabilities,
@@ -60,14 +62,15 @@ return {
 				"typescriptreact",
 				"javascriptreact",
 			},
+			root_dir = util.root_pattern("tailwind.config.js"),
 		})
 
 		-- configure graphql language server
-		lspconfig["graphql"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-		})
+		-- lspconfig["graphql"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+		-- })
 
 		-- configure emmet language server
 		lspconfig["emmet_ls"].setup({
@@ -85,7 +88,6 @@ return {
 			},
 		})
 
-		local util = require("lspconfig.util")
 		local cmd = {
 			"ngserver",
 			"--stdio",
