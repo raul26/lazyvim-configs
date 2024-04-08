@@ -28,6 +28,7 @@ return {
 					"tsx",
 					"rust",
 					"toml",
+					"go",
 					"yaml",
 					"html",
 					"css",

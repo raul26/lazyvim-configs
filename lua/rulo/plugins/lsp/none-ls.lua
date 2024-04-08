@@ -40,6 +40,20 @@ return {
 				cspell.diagnostics,
 				cspell.code_actions,
 				formatting.prettier,
+				null_ls.builtins.diagnostics.semgrep,
+				diagnostics.semgrep.with({
+					args = { "-q", "--json", "$FILENAME" },
+					filetypes = {
+						"typescript",
+						"typescriptreact",
+						"go",
+					},
+					method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+				}),
+				formatting.gofmt,
+				formatting.goimports,
+				null_ls.builtins.code_actions.gomodifytags,
+				null_ls.builtins.code_actions.impl,
 				formatting.stylua, -- lua formatter
 				-- require("none-ls.code_actions.eslint"),
 				require("none-ls.diagnostics.eslint").with({

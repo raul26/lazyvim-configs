@@ -106,6 +106,11 @@ return {
 			root_dir = util.root_pattern(".angular.json", "angular.json"),
 		})
 
+		lspconfig["gopls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,

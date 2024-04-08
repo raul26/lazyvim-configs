@@ -31,6 +31,7 @@ return {
 				"tsserver",
 				"html",
 				"cssls",
+				"gopls",
 				"tailwindcss",
 				"lua_ls",
 				"emmet_ls",
